@@ -126,7 +126,7 @@ const Login = ({ onLogin }) => {
   );
 };
 
-// Register Page Component
+
 const Register = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -183,7 +183,7 @@ const Register = () => {
               id="reg-username"
               type="text"
               className="form-control"
-              placeholder="e.g. alex_green"
+              placeholder="e.g. kamal"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               required
@@ -207,7 +207,7 @@ const Register = () => {
               id="reg-email"
               type="email"
               className="form-control"
-              placeholder="alex@example.com"
+              placeholder="kamal@example.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -232,7 +232,7 @@ const Register = () => {
               id="reg-phone"
               type="tel"
               className="form-control"
-              placeholder="555-019-2834"
+              
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
             />
@@ -243,7 +243,7 @@ const Register = () => {
               id="reg-address"
               type="text"
               className="form-control"
-              placeholder="123 Eco Blvd, Green Town"
+              
               value={address}
               onChange={(e) => setAddress(e.target.value)}
             />
@@ -259,7 +259,7 @@ const Register = () => {
   );
 };
 
-// Resident Dashboard Component
+
 const ResidentDashboard = ({ user }) => {
   const [bins, setBins] = useState([]);
   const [requests, setRequests] = useState([]);
@@ -321,7 +321,7 @@ const ResidentDashboard = ({ user }) => {
       setFormSuccess('Disposal request submitted successfully!');
       setQuantity('');
       setDescription('');
-      fetchData(); // Refresh requests list
+      fetchData(); 
     } catch (err) {
       setFormError(err.message);
     }
@@ -353,7 +353,7 @@ const ResidentDashboard = ({ user }) => {
       </div>
 
       <div className="dashboard-grid">
-        {/* Request pickup Form */}
+        
         <div className="card">
           <h3 className="card-title">Schedule Waste Pick-up 📦</h3>
           {formError && <div className="alert alert-danger">{formError}</div>}
@@ -400,7 +400,7 @@ const ResidentDashboard = ({ user }) => {
           </form>
         </div>
 
-        {/* Local Smart Bins list */}
+        
         <div className="card">
           <h3 className="card-title">Neighborhood Smart Bins 📡</h3>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', overflowY: 'auto', maxHeight: '350px', paddingRight: '0.25rem' }}>
@@ -434,7 +434,7 @@ const ResidentDashboard = ({ user }) => {
         </div>
       </div>
 
-      {/* Requests History */}
+      
       <div className="card" style={{ width: '100%' }}>
         <h3 className="card-title">Your Collection Requests 📅</h3>
         {requests.length === 0 ? (
@@ -486,13 +486,13 @@ const ResidentDashboard = ({ user }) => {
   );
 };
 
-// Admin Dashboard Component
+
 const AdminDashboard = () => {
   const [bins, setBins] = useState([]);
   const [requests, setRequests] = useState([]);
   const [users, setUsers] = useState([]);
   
-  // Forms states
+
   const [newBinLocation, setNewBinLocation] = useState('');
   const [newBinCapacity, setNewBinCapacity] = useState('');
   const [newBinType, setNewBinType] = useState('ORGANIC');
@@ -601,7 +601,7 @@ const AdminDashboard = () => {
 
   const handleOpenScheduleModal = (req) => {
     setActiveRequestForScheduling(req);
-    // Preset current date
+    
     const now = new Date();
     now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
     setScheduleDateInput(now.toISOString().slice(0, 16));
@@ -642,7 +642,7 @@ const AdminDashboard = () => {
     }
   };
 
-  // Stats calculation
+  
   const totalWeightRequested = requests
     .filter(r => r.status === 'COMPLETED')
     .reduce((sum, r) => sum + r.quantity, 0);
@@ -662,7 +662,7 @@ const AdminDashboard = () => {
       {successMsg && <div className="alert alert-success">{successMsg}</div>}
       {errorMsg && <div className="alert alert-danger">{errorMsg}</div>}
 
-      {/* Quick stats dashboard */}
+      
       <div className="stat-grid">
         <div className="stat-card">
           <div className="stat-icon emerald">📊</div>
@@ -695,7 +695,7 @@ const AdminDashboard = () => {
       </div>
 
       <div className="dashboard-grid">
-        {/* Manage Bins card */}
+        
         <div className="card">
           <h3 className="card-title">Add Smart Sensor Bin 🛰️</h3>
           <form onSubmit={handleAddBin}>
@@ -704,7 +704,7 @@ const AdminDashboard = () => {
               <input
                 type="text"
                 className="form-control"
-                placeholder="e.g. Westside Avenue"
+                placeholder="e.g. Maharagama West"
                 value={newBinLocation}
                 onChange={(e) => setNewBinLocation(e.target.value)}
                 required
@@ -738,7 +738,7 @@ const AdminDashboard = () => {
           </form>
         </div>
 
-        {/* Update fill levels card */}
+      
         <div className="card">
           <h3 className="card-title">Update Sensor Telemetry 📶</h3>
           <form onSubmit={handleUpdateBinLevel}>
@@ -774,7 +774,7 @@ const AdminDashboard = () => {
         </div>
       </div>
 
-      {/* Smart Bins Table */}
+      
       <div className="card" style={{ marginBottom: '2rem' }}>
         <h3 className="card-title">Smart Waste Bins Directory 📡</h3>
         {bins.length === 0 ? (
@@ -822,7 +822,7 @@ const AdminDashboard = () => {
         )}
       </div>
 
-      {/* Collection Queue */}
+      
       <div className="card" style={{ marginBottom: '2rem' }}>
         <h3 className="card-title">Residential Pick-up Request Queue ⏳</h3>
         {requests.length === 0 ? (
@@ -882,7 +882,7 @@ const AdminDashboard = () => {
         )}
       </div>
 
-      {/* Users List */}
+      
       <div className="card">
         <h3 className="card-title">Registered Accounts Directory 👥</h3>
         <div className="table-container">
@@ -917,7 +917,7 @@ const AdminDashboard = () => {
         </div>
       </div>
 
-      {/* Schedule Modal */}
+      
       {activeRequestForScheduling && (
         <div className="modal-backdrop">
           <div className="modal-content">
@@ -935,7 +935,7 @@ const AdminDashboard = () => {
                 <input
                   type="datetime-local"
                   className="form-control"
-                  value={scheduleDateInput}
+                  
                   onChange={(e) => setScheduleDateInput(e.target.value)}
                   required
                 />
@@ -960,7 +960,7 @@ const AdminDashboard = () => {
   );
 };
 
-// Root App Component
+
 function App() {
   const [currentUser, setCurrentUser] = useState(
     JSON.parse(localStorage.getItem('currentUser')) || null
