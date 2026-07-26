@@ -33,7 +33,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Scrollbar styling */
+
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -48,14 +48,14 @@ body {
   background: var(--accent-emerald);
 }
 
-/* Custom layout container */
+
 .app-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-/* Glassmorphism Navigation Bar */
+
 .navbar {
   position: sticky;
   top: 0;
@@ -143,7 +143,7 @@ body {
   color: white;
 }
 
-/* Dashboard Wrapper */
+
 .main-content {
   flex: 1;
   max-width: 1300px;
@@ -152,7 +152,6 @@ body {
   padding: 2rem;
 }
 
-/* Welcome Hero Header */
 .welcome-hero {
   background: linear-gradient(135deg, rgba(19, 27, 46, 0.9) 0%, rgba(11, 15, 25, 0.9) 100%);
   border: 1px solid var(--border-color);
@@ -196,7 +195,7 @@ body {
   font-size: 1.1rem;
 }
 
-/* Cards & Grid Systems */
+
 .dashboard-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -232,7 +231,7 @@ body {
   align-items: center;
 }
 
-/* Stats panel cards */
+
 .stat-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -280,7 +279,6 @@ body {
   color: var(--text-main);
 }
 
-/* Smart Bins Fill Indicator */
 .bin-gauge {
   background: var(--bg-primary);
   height: 12px;
@@ -338,7 +336,6 @@ body {
   font-weight: 500;
 }
 
-/* Forms */
 .form-group {
   margin-bottom: 1.25rem;
   display: flex;
@@ -379,7 +376,7 @@ textarea.form-control {
   min-height: 100px;
 }
 
-/* Buttons */
+
 .btn {
   font-family: var(--font-family);
   padding: 0.75rem 1.5rem;
@@ -432,7 +429,7 @@ textarea.form-control {
   width: 100%;
 }
 
-/* Interactive tables */
+
 .table-container {
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
@@ -470,7 +467,7 @@ textarea.form-control {
   background: rgba(255, 255, 255, 0.01);
 }
 
-/* Status Pill badges for Request list */
+
 .badge-req {
   padding: 0.25rem 0.6rem;
   border-radius: 12px;
@@ -485,7 +482,7 @@ textarea.form-control {
 .badge-req.completed { background: rgba(16, 185, 129, 0.15); color: #34d399; }
 .badge-req.cancelled { background: rgba(244, 63, 94, 0.15); color: #f87171; }
 
-/* Login / Register Pages */
+
 .auth-wrapper {
   min-height: 100vh;
   display: flex;
@@ -545,7 +542,7 @@ textarea.form-control {
   text-decoration: underline;
 }
 
-/* Modal and Alert styling */
+
 .alert {
   padding: 1rem;
   border-radius: 8px;
@@ -619,7 +616,6 @@ textarea.form-control {
   margin-top: 1.5rem;
 }
 
-/* Grid Layout for dashboard columns */
 .dashboard-columns {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -632,7 +628,7 @@ textarea.form-control {
   }
 }
 
-/* Responsive utilities */
+
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
