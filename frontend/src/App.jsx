@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate, Link, useNavigate } f
 
 const API_BASE_URL = 'http://localhost:8080/api';
 
-// Helper component for private routes
+
 const PrivateRoute = ({ children, allowedRole }) => {
   const user = JSON.parse(localStorage.getItem('currentUser'));
   if (!user) {
@@ -37,7 +37,6 @@ const Navigation = ({ user, onLogout }) => {
   );
 };
 
-// Login Page Component
 const Login = ({ onLogin }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -270,7 +269,7 @@ const ResidentDashboard = ({ user }) => {
   const [formError, setFormError] = useState('');
   const [formSuccess, setFormSuccess] = useState('');
 
-  // Fetch Bins and Requests
+  
   const fetchData = async () => {
     try {
       const binsRes = await fetch(`${API_BASE_URL}/bins`);
